@@ -1,3 +1,8 @@
+# -*- coding: utf-8 -*-
+''' Script for setting, moving and clearing aliases in the Spreadsheet, and generating Part Families
+
+author: hatari, 2016
+'''
 from PySide import QtGui, QtCore
 import os
 
