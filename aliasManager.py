@@ -1,9 +1,5 @@
-# -*- coding: utf-8 -*-
-''' Script for setting, moving and clearing aliases in the Spreadsheet, and generating Part Families
-
-author: hatari, 2016
-'''
 from PySide import QtGui, QtCore
+from FreeCAD import Gui
 import os
 
 class MyButtons(QtGui.QDialog):
@@ -52,7 +48,7 @@ class MyButtons(QtGui.QDialog):
   
 # Define Aliases
 def routine1():
-    column = QtGui.QInputDialog.getText(None, "Column containing Values", "Enter Column Letter")
+    column = QtGui.QInputDialog.getText(None, "Target Value Column", "Enter Target Column")
     if column[1]:
         col = str.capitalize(str(column[0])) # Always use capital characters for Spreadsheet
         startCell =  QtGui.QInputDialog.getInteger(None, "start Row number", "Input start Row number:")
@@ -67,7 +63,7 @@ def routine1():
                     App.ActiveDocument.Spreadsheet.setAlias(cellTo, App.ActiveDocument.Spreadsheet.getContents(cellFrom))
 # Clear Aliases
 def routine2():
-        column = QtGui.QInputDialog.getText(None, "Column containing Values", "Enter Column Letter")
+        column = QtGui.QInputDialog.getText(None, "Target Value Column", "Enter Target Column")
         if column[1]:
             col = str.capitalize(str(column[0]))
             startCell =  QtGui.QInputDialog.getInteger(None, "start Row number", "Input start Row number:")
