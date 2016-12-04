@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
-''' Script for setting, moving and clearing aliases in the Spreadsheet, and generating Part Families
+''' Script for setting, moving and clearing aliases in the Spreadsheet.
+    It allows to generate Part Families
 
-author: hatari, 2016
+    hatari 2016 v0.2
+
+    GNU Lesser General Public License (LGPL)
 '''
 from PySide import QtGui, QtCore
 import os
@@ -119,7 +122,7 @@ def routine4():
         if columnTo[1]:
             startCell =  QtGui.QInputDialog.getInteger(None, "Start Cell Row", "Input Start Cell Row:")
             if startCell[1]:
-                endCell =  QtGui.QInputDialog.getInteger(None, "End Cell Row", "Input Start Cell Row:")
+                endCell =  QtGui.QInputDialog.getInteger(None, "End Cell Row", "Input End Cell Row:")
                 if endCell[1]:    
                     fam_range = []
                     for c in char_range(str(columnFrom[0]), str(columnTo[0])):
