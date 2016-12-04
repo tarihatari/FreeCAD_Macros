@@ -142,8 +142,8 @@ def routine4():
                         filename = filePrefix + '_' + suffix + '.fcstd'
                         filePath = os.path.join(docDir, filename)
                     
-                        FreeCAD.Console.PrintMessage("Saving view to %s\n" % filePath)
-                        App.getDocument(filePrefix).saveAs(filePath)
+                        FreeCAD.Console.PrintMessage("Saving file to %s\n" % filePath)
+                        App.getDocument(filePrefix).saveCopy(filePath)
                         
 
 
